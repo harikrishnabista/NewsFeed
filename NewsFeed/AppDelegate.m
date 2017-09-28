@@ -8,18 +8,26 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
+
+@property (nonatomic, strong) HomeViewController *rootViewController;
+@property (nonatomic, strong) UINavigationController* rootNavigationController;
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Override point for customization after application launch.
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.clipsToBounds = NO;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -47,5 +55,34 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Window
+- (UIWindow *)window{
+    if (!_window){
+        _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _window.tintAdjustmentMode = UIViewTintAdjustmentModeNormal;
+        _window.rootViewController = self.rootNavigationController;
+    }
+    
+    return _window;
+}
+
+#pragma mark - RootViewController
+- (UIViewController *)rootViewController{
+    if (!_rootViewController){
+        _rootViewController = [[HomeViewController alloc] init];
+    }
+    
+    return _rootViewController;
+}
+
+#pragma mark - RootNavigationViewController
+- (UINavigationController *)rootNavigationController{
+    if (!_rootNavigationController){
+        _rootNavigationController = [[UINavigationController alloc] initWithRootViewController:self.rootViewController];
+    }
+    
+    return _rootNavigationController;
+}
 
 @end
+
