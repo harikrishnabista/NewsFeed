@@ -122,6 +122,8 @@
         cell = [[ArticleCollectionViewCell alloc] init];
     }
     
+    
+    
     Article* article = self.articles[indexPath.row];
     
     cell.lblTitle.text = article.title;
@@ -141,6 +143,12 @@
             [cell.imgMedia setImage:img];
         });
     }];
+    
+    // for main news slight layout change
+    if(indexPath.row == 0){
+        cell.bottomOfMedia.constant = -80;
+        cell.lblTitle.numberOfLines = 2;
+    }
 
     return cell;
 }

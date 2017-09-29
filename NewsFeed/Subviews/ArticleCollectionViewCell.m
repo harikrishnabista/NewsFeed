@@ -10,6 +10,8 @@
 
 @implementation ArticleCollectionViewCell
 
+//@Pro NSLayoutConstraint *bottomOfMedia
+
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
@@ -91,7 +93,7 @@
                                                               toItem:self.viewCellContainer
                                                            attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
     
-    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.imgMedia
+    self.bottomOfMedia = [NSLayoutConstraint constraintWithItem:self.imgMedia
                                                               attribute:NSLayoutAttributeBottom
                                                               relatedBy:NSLayoutRelationEqual
                                                                  toItem:self.viewCellContainer
@@ -101,7 +103,7 @@
     self.imgMedia.contentMode = UIViewContentModeScaleAspectFill;
     self.imgMedia.clipsToBounds = YES;
     
-    [NSLayoutConstraint activateConstraints:@[top,left,bottom,right]];
+    [NSLayoutConstraint activateConstraints:@[top,left,self.bottomOfMedia,right]];
     //    }
     
     //    if(self.lblTitle == nil){

@@ -15,6 +15,7 @@
 @property (nonatomic,strong) UILabel *lblTitle;
 @property (nonatomic,strong) UILabel *lblSubTitle;
 
-@property NSURLSessionDataTask* imgDownloadTask;
+@property  (nonatomic,strong) NSURLSessionDataTask* imgDownloadTask;
+@property (nonatomic,strong) NSLayoutConstraint* bottomOfMedia;
 
 @end
