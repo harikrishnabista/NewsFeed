@@ -80,7 +80,7 @@
         [title appendString:string];
     }else if ([element isEqualToString:@"description"]) {
         [desc appendString:string];
-    }else if ([element isEqualToString:@"link"]) {
+    }else if ([element isEqualToString:@"guid"]) {
         [link appendString:string];
     }
 }
@@ -106,9 +106,9 @@
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    for (Article *article in feeds) {
-        NSLog(@"title: %@",article.title);
-    }
+//    for (Article *article in feeds) {
+//        NSLog(@"title: %@",article.title);
+//    }
 }
 
 @end

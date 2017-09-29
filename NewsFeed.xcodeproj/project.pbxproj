@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		883821921F7D8EBF0054BDC9 /* LoadingOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 883821911F7D8EBF0054BDC9 /* LoadingOverlay.m */; };
+		883821951F7DA1B30054BDC9 /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 883821941F7DA1B30054BDC9 /* ArticleDetailViewController.m */; };
 		88574DDC1F7CC83800CF4003 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88574DDB1F7CC83800CF4003 /* AppDelegate.m */; };
 		88574DE41F7CC83800CF4003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88574DE31F7CC83800CF4003 /* Assets.xcassets */; };
 		88574DEA1F7CC83800CF4003 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88574DE91F7CC83800CF4003 /* main.m */; };
@@ -15,9 +17,14 @@
 		88574DFB1F7CCF3700CF4003 /* NewsFeedDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 88574DFA1F7CCF3700CF4003 /* NewsFeedDataHandler.m */; };
 		88574E0B1F7CD43A00CF4003 /* APICaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 88574E0A1F7CD43A00CF4003 /* APICaller.m */; };
 		88574E0F1F7CDC0500CF4003 /* ArticleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88574E0E1F7CDC0500CF4003 /* ArticleCollectionViewCell.m */; };
+		88574E131F7D742C00CF4003 /* ImageDownloadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 88574E121F7D742C00CF4003 /* ImageDownloadHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		883821901F7D8EBF0054BDC9 /* LoadingOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingOverlay.h; sourceTree = "<group>"; };
+		883821911F7D8EBF0054BDC9 /* LoadingOverlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingOverlay.m; sourceTree = "<group>"; };
+		883821931F7DA1B30054BDC9 /* ArticleDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
+		883821941F7DA1B30054BDC9 /* ArticleDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailViewController.m; sourceTree = "<group>"; };
 		88574DD71F7CC83800CF4003 /* NewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88574DDA1F7CC83800CF4003 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		88574DDB1F7CC83800CF4003 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,6 +41,8 @@
 		88574E0A1F7CD43A00CF4003 /* APICaller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICaller.m; sourceTree = "<group>"; };
 		88574E0D1F7CDC0500CF4003 /* ArticleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleCollectionViewCell.h; sourceTree = "<group>"; };
 		88574E0E1F7CDC0500CF4003 /* ArticleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleCollectionViewCell.m; sourceTree = "<group>"; };
+		88574E111F7D742C00CF4003 /* ImageDownloadHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloadHelper.h; sourceTree = "<group>"; };
+		88574E121F7D742C00CF4003 /* ImageDownloadHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +94,8 @@
 			children = (
 				88574DF01F7CCD0700CF4003 /* HomeViewController.h */,
 				88574DF11F7CCD0700CF4003 /* HomeViewController.m */,
+				883821931F7DA1B30054BDC9 /* ArticleDetailViewController.h */,
+				883821941F7DA1B30054BDC9 /* ArticleDetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -103,6 +114,8 @@
 			children = (
 				88574E091F7CD43A00CF4003 /* APICaller.h */,
 				88574E0A1F7CD43A00CF4003 /* APICaller.m */,
+				883821901F7D8EBF0054BDC9 /* LoadingOverlay.h */,
+				883821911F7D8EBF0054BDC9 /* LoadingOverlay.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -112,6 +125,8 @@
 			children = (
 				88574DF91F7CCF3700CF4003 /* NewsFeedDataHandler.h */,
 				88574DFA1F7CCF3700CF4003 /* NewsFeedDataHandler.m */,
+				88574E111F7D742C00CF4003 /* ImageDownloadHelper.h */,
+				88574E121F7D742C00CF4003 /* ImageDownloadHelper.m */,
 			);
 			path = ModelDataHandler;
 			sourceTree = "<group>";
@@ -197,10 +212,13 @@
 				88574DF81F7CCD8F00CF4003 /* Article.m in Sources */,
 				88574E0F1F7CDC0500CF4003 /* ArticleCollectionViewCell.m in Sources */,
 				88574DFB1F7CCF3700CF4003 /* NewsFeedDataHandler.m in Sources */,
+				88574E131F7D742C00CF4003 /* ImageDownloadHelper.m in Sources */,
 				88574DEA1F7CC83800CF4003 /* main.m in Sources */,
 				88574DDC1F7CC83800CF4003 /* AppDelegate.m in Sources */,
+				883821951F7DA1B30054BDC9 /* ArticleDetailViewController.m in Sources */,
 				88574DF21F7CCD0700CF4003 /* HomeViewController.m in Sources */,
 				88574E0B1F7CD43A00CF4003 /* APICaller.m in Sources */,
+				883821921F7D8EBF0054BDC9 /* LoadingOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

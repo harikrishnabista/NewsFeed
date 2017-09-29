@@ -10,7 +10,7 @@
 
 @implementation APICaller
 
--(void)getDataFromUrl:(NSString *)url completion:(void (^)(NSData *data,NSURLResponse *response,NSError *error))completion {
+-(NSURLSessionDataTask*)getDataFromUrl:(NSString *)url completion:(void (^)(NSData *data,NSURLResponse *response,NSError *error))completion {
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask* task = [session
@@ -19,8 +19,9 @@
                                       completion(data,response,error);
                                   }];
     
-    [task resume];
     
+    [task resume];
+    return task;
 }
 
 @end

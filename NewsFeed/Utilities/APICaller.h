@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface APICaller : NSObject
--(void)getDataFromUrl:(NSString *)url completion:(void (^)(NSData *data,NSURLResponse *response,NSError *error))completion;
+-(NSURLSessionDataTask*)getDataFromUrl:(NSString *)url completion:(void (^)(NSData *data,NSURLResponse *response,NSError *error))completion;
 @end

@@ -10,6 +10,4 @@
 
 @interface HomeViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
 
-
-
 @end

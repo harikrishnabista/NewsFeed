@@ -10,7 +10,11 @@
 
 @interface ArticleCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic,strong) UIView *viewCellContainer;
 @property (nonatomic,strong) UIImageView *imgMedia;
-@property (nonatomic,strong) UILabel *txtTitle;
+@property (nonatomic,strong) UILabel *lblTitle;
+@property (nonatomic,strong) UILabel *lblSubTitle;
+
+@property NSURLSessionDataTask* imgDownloadTask;
 
 @end

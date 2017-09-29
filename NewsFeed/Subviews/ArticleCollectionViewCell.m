@@ -10,56 +10,165 @@
 
 @implementation ArticleCollectionViewCell
 
--(void)drawRect:(CGRect)rect {
+- (instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setupSubViews];
+    }
+    return self;
+}
+
+-(void)setupSubViews{
+    self.viewCellContainer = [[UIView alloc] init];
+    self.imgMedia = [[UIImageView alloc] init];
+    self.lblTitle = [[UILabel alloc] init];
+    self.lblSubTitle = [[UILabel alloc ] init];
     
-    self.imgMedia = [[UIImageView alloc] initWithFrame:self.frame];
+    [self addSubview:self.viewCellContainer];
+    [self.viewCellContainer addSubview:self.imgMedia];
+    [self.viewCellContainer addSubview:self.lblSubTitle];
+    [self.viewCellContainer addSubview:self.lblTitle];
     
-//    self.translatesAutoresizingMaskIntoConstraints = false
+    self.viewCellContainer.translatesAutoresizingMaskIntoConstraints = NO;
     
-//    let top = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: parentView, attribute: .top, multiplier: 1, constant: 0)
-//    let trailing = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: parentView, attribute: .trailing, multiplier: 1, constant: 0)
-//
-//    let bottom = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: parentView, attribute: .bottom, multiplier: 1, constant: 0)
-//    let leading = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: parentView, attribute: .leading, multiplier: 1, constant: 0)
-//
-//    NSLayoutConstraint.activate([top, trailing,bottom,leading])
+    NSLayoutConstraint *leftViewCellContainer = [NSLayoutConstraint constraintWithItem:self.viewCellContainer
+                                                                             attribute:NSLayoutAttributeLeft
+                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                toItem:self
+                                                                             attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
     
-    [self addSubview:self.imgMedia];
+    NSLayoutConstraint *rightViewCellContainer = [NSLayoutConstraint constraintWithItem:self.viewCellContainer
+                                                                              attribute:NSLayoutAttributeRight
+                                                                              relatedBy:NSLayoutRelationEqual
+                                                                                 toItem:self
+                                                                              attribute:NSLayoutAttributeRight
+                                                                             multiplier:1.0 constant:0];
+    
+    
+    NSLayoutConstraint *topViewCellContainer = [NSLayoutConstraint constraintWithItem:self.viewCellContainer
+                                                                            attribute:NSLayoutAttributeTop
+                                                                            relatedBy:NSLayoutRelationEqual
+                                                                               toItem:self
+                                                                            attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    
+    NSLayoutConstraint *bottomViewCellContainer = [NSLayoutConstraint constraintWithItem:self.viewCellContainer
+                                                                               attribute:NSLayoutAttributeBottom
+                                                                               relatedBy:NSLayoutRelationEqual
+                                                                                  toItem:self
+                                                                               attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
+    
+    [NSLayoutConstraint activateConstraints:@[leftViewCellContainer,rightViewCellContainer,topViewCellContainer,bottomViewCellContainer]];
+    
+    self.viewCellContainer.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.viewCellContainer.layer.borderWidth = 1.0;
+    
+    //        self.viewCellContainer.clipsToBounds = YES;
+    //    }
+    
+    //    if(self.imgMedia == nil){
+    
+    
+    
     self.imgMedia.translatesAutoresizingMaskIntoConstraints = NO;
     
-//    self.btnCoin.translatesAutoresizingMaskIntoConstraints = NO;
-    /* Leading space to superview */
     NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.imgMedia
-                                attribute:NSLayoutAttributeLeft
-                                relatedBy:NSLayoutRelationEqual
-                                toItem:self
-                                attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+                                                            attribute:NSLayoutAttributeLeft
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:self.viewCellContainer
+                                                            attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
     
     NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.imgMedia
-                                                            attribute:NSLayoutAttributeRight
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:self
-                                                            attribute:NSLayoutAttributeRight
+                                                             attribute:NSLayoutAttributeRight
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.viewCellContainer
+                                                             attribute:NSLayoutAttributeRight
                                                             multiplier:1.0 constant:0];
     
     
     NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.imgMedia
-                                                            attribute:NSLayoutAttributeTop
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:self
-                                                            attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+                                                           attribute:NSLayoutAttributeTop
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:self.viewCellContainer
+                                                           attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
     
     NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.imgMedia
-                                                            attribute:NSLayoutAttributeBottom
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:self
-                                                            attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
+                                                              attribute:NSLayoutAttributeBottom
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:self.viewCellContainer
+                                                              attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-60];
     
-    self.imgMedia.image = [UIImage imageNamed:@"sampleicon"];
+//    self.imgMedia.image = [UIImage imageNamed:@"sampleicon"];
     self.imgMedia.contentMode = UIViewContentModeScaleAspectFill;
     self.imgMedia.clipsToBounds = YES;
     
     [NSLayoutConstraint activateConstraints:@[top,left,bottom,right]];
+    //    }
+    
+    //    if(self.lblTitle == nil){
+    
+    
+    
+    self.lblTitle.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLayoutConstraint *leftLblTitle = [NSLayoutConstraint constraintWithItem:self.lblTitle
+                                                                    attribute:NSLayoutAttributeLeft
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.imgMedia
+                                                                    attribute:NSLayoutAttributeLeft multiplier:1.0 constant:10];
+    
+    NSLayoutConstraint *rightLblTitle = [NSLayoutConstraint constraintWithItem:self.lblTitle
+                                                                     attribute:NSLayoutAttributeRight
+                                                                     relatedBy:NSLayoutRelationEqual
+                                                                        toItem:self.imgMedia
+                                                                     attribute:NSLayoutAttributeRight
+                                                                    multiplier:1.0 constant:-10];
+    
+    
+    NSLayoutConstraint *topLblTitle = [NSLayoutConstraint constraintWithItem:self.lblTitle
+                                                                   attribute:NSLayoutAttributeTop
+                                                                   relatedBy:NSLayoutRelationEqual
+                                                                      toItem:self.imgMedia
+                                                                   attribute:NSLayoutAttributeBottom
+                                                                  multiplier:1.0 constant:10];
+    
+    
+    [NSLayoutConstraint activateConstraints:@[leftLblTitle,rightLblTitle,topLblTitle]];
+    
+    [self.lblTitle setFont:[UIFont boldSystemFontOfSize:14]];
+    self.lblTitle.numberOfLines = 1;
+    
+    self.lblSubTitle.translatesAutoresizingMaskIntoConstraints = NO;
+    self.lblSubTitle.numberOfLines = 1;
+    [self.lblSubTitle setFont:[UIFont systemFontOfSize:12]];
+    
+    
+    NSLayoutConstraint *leftLblSubTitle = [NSLayoutConstraint constraintWithItem:self.lblSubTitle
+                                                                       attribute:NSLayoutAttributeLeft
+                                                                       relatedBy:NSLayoutRelationEqual
+                                                                          toItem:self.lblTitle
+                                                                       attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+    
+    NSLayoutConstraint *rightLblSubTitle = [NSLayoutConstraint constraintWithItem:self.lblSubTitle
+                                                                        attribute:NSLayoutAttributeRight
+                                                                        relatedBy:NSLayoutRelationEqual
+                                                                           toItem:self.lblTitle
+                                                                        attribute:NSLayoutAttributeRight
+                                                                       multiplier:1.0 constant:0];
+    
+    
+    NSLayoutConstraint *topLblSubTitle = [NSLayoutConstraint constraintWithItem:self.lblSubTitle
+                                                                      attribute:NSLayoutAttributeTop
+                                                                      relatedBy:NSLayoutRelationEqual
+                                                                         toItem:self.lblTitle
+                                                                      attribute:NSLayoutAttributeBottom
+                                                                     multiplier:1.0 constant:6];
+    
+    
+    [NSLayoutConstraint activateConstraints:@[leftLblSubTitle,rightLblSubTitle,topLblSubTitle]];
+}
+
+-(void)drawRect:(CGRect)rect {
+
 }
 
 @end
