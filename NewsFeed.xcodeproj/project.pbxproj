@@ -25,6 +25,7 @@
 		883821911F7D8EBF0054BDC9 /* LoadingOverlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingOverlay.m; sourceTree = "<group>"; };
 		883821931F7DA1B30054BDC9 /* ArticleDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
 		883821941F7DA1B30054BDC9 /* ArticleDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailViewController.m; sourceTree = "<group>"; };
+		883821981F7DD1E70054BDC9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88574DD71F7CC83800CF4003 /* NewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88574DDA1F7CC83800CF4003 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		88574DDB1F7CC83800CF4003 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		88574DD91F7CC83800CF4003 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				883821981F7DD1E70054BDC9 /* LaunchScreen.storyboard */,
 				88574E0C1F7CDBCF00CF4003 /* Subviews */,
 				88574DFF1F7CD2E800CF4003 /* ModelDataHandler */,
 				88574DFE1F7CD2DF00CF4003 /* Utilities */,

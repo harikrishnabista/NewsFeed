@@ -58,13 +58,27 @@
      object:[UIDevice currentDevice]];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void) orientationChanged:(NSNotification *)note{
     UIDevice * device = note.object;
     
-    if(device.orientation == UIDeviceOrientationPortrait || device.orientation == UIDeviceOrientationPortraitUpsideDown){
+//    if(device.orientation == UIDeviceOrientationPortrait || device.orientation == UIDeviceOrientationPortraitUpsideDown){
+//        self.topWebView.constant = 64;
+//    }else{
+//        self.topWebView.constant = 40;
+//    }
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         self.topWebView.constant = 64;
     }else{
-        self.topWebView.constant = 40;
+        if(device.orientation == UIDeviceOrientationPortrait || device.orientation == UIDeviceOrientationPortraitUpsideDown){
+            self.topWebView.constant = 64;
+        }else{
+            self.topWebView.constant = 32;
+        }
     }
 }
 
@@ -144,10 +158,15 @@
     
     UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
     
-    if(deviceOrientation == UIDeviceOrientationPortrait || deviceOrientation == UIDeviceOrientationPortraitUpsideDown){
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         self.topWebView.constant = 64;
     }else{
-        self.topWebView.constant = 40;
+        if(deviceOrientation == UIDeviceOrientationPortrait || deviceOrientation == UIDeviceOrientationPortraitUpsideDown){
+            self.topWebView.constant = 64;
+        }else{
+            self.topWebView.constant = 32;
+        }
     }
     
     [NSLayoutConstraint activateConstraints:@[self.topWebView,left,right,bottom]];

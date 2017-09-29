@@ -162,9 +162,9 @@ didEndDisplayingCell:(UICollectionViewCell *)cell
     }
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        return CGSizeMake((self.view.frame.size.width - 30)/3, (self.view.frame.size.width-30)/3);
+        return CGSizeMake((self.view.frame.size.width - 10*5)/3, (self.view.frame.size.width-10*5)/3);
     }else{
-        return CGSizeMake((self.view.frame.size.width - 30)/2, (self.view.frame.size.width-30)/2);
+        return CGSizeMake((self.view.frame.size.width - 10*3)/2, (self.view.frame.size.width-10*3)/2);
     }
 }
 
@@ -172,6 +172,13 @@ didEndDisplayingCell:(UICollectionViewCell *)cell
     ArticleDetailViewController* viewCon = [[ArticleDetailViewController alloc] init];
     viewCon.selectedArticle = self.articles[indexPath.row];
     [self.navigationController pushViewController:viewCon animated:YES];
+}
+
+- (void)viewWillLayoutSubviews;{
+    [super viewWillLayoutSubviews];
+    UICollectionViewFlowLayout *flowLayout = (id)self.collectionView.collectionViewLayout;
+    
+    [flowLayout invalidateLayout]; //force the elements to get laid out again with the new size
 }
 
 @end
