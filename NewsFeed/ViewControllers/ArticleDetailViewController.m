@@ -159,8 +159,6 @@
     UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
     
     
-    
-    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
         self.topWebView.constant = 64;
     }else{

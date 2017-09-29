@@ -158,7 +158,7 @@ didEndDisplayingCell:(UICollectionViewCell *)cell
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     if(indexPath.row == 0){
-        return CGSizeMake(self.collectionView.frame.size.width, (self.view.frame.size.width - 30)/2);
+        return CGSizeMake(self.collectionView.frame.size.width, (self.view.frame.size.width - 30)/1.5);
     }
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
